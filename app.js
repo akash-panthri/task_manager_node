@@ -1,8 +1,15 @@
 const express = require('express')
 const app = express()
 const PORT = 3000;
+const tasks = require('./routes/tasks')
 
-app.get('hello',(req, res)=>{
+
+
+
+// routes
+app.get('/hello',(req, res)=>{
     res.send('Task Manager App')
 })
+
+app.use('/api/v1/tasks', tasks)
 app.listen(PORT, console.log(`server listening on ${PORT}`))
