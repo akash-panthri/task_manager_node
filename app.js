@@ -4,7 +4,8 @@ const PORT = 3000;
 const tasks = require('./routes/tasks')
 
 
-
+// middleware
+app.use(express.json())
 
 // routes
 app.get('/hello',(req, res)=>{
