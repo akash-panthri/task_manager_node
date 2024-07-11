@@ -5,8 +5,10 @@ const getAllTasks = (req, res)=>{
 const getTask = (req, res)=>{
     res.send('get single task from server')
 }
-const createTask = (req, res)=>{
-    res.send('create task from server')
+const createTask = async (req, res)=>{
+    const task = await Task.create(req.body)
+    res.status(201).json({task})
+    // res.send('create task from server')
 }
 const updateTask = (req, res)=>{
     res.send('update task from server')
