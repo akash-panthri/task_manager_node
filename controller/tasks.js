@@ -1,3 +1,4 @@
+const Task = require('../models/schema')
 const getAllTasks = (req, res)=>{
     res.send('get all tasks from server')
 }
