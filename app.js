@@ -4,6 +4,7 @@ const app = express()
 const PORT = 3000;
 const tasks = require('./routes/tasks')
 const connectDB = require('./db/connect')
+const notFound = require('./middleware/not-found')
 
 
 //connect to db
@@ -20,4 +21,5 @@ app.get('/hello',(req, res)=>{
 })
 
 app.use('/api/v1/tasks', tasks)
+app.use(notFound)
 app.listen(PORT, console.log(`server listening on ${PORT}`))
